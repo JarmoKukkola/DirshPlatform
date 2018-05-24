@@ -1,0 +1,2 @@
+cls
+heroku local worker

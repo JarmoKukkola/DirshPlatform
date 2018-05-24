@@ -1,0 +1,2 @@
+heroku logs -t 
+pause

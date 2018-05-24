@@ -1,0 +1,5 @@
+node_modules/
+functions/**/*.js
+functions/**/*.js.map
+typings/
+.eslintcache

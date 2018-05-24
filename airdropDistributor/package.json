@@ -1,0 +1,28 @@
+{
+  "name": "dirsh.airdrop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "node build/index.js"
+  },
+  "author": "Jarmo Kukkola",
+  "license": "GPL 3.0",
+  "private": true,
+  "engines": {
+    "node": "8.11.1",
+    "npm": "6.0.x"
+  },
+  "dependencies": {
+    "@types/node-telegram-bot-api": "^0.28.2",
+    "dotenv": "^5.0.1",
+    "firebase-admin": "^5.12.0",
+    "node-telegram-bot-api": "^0.30.0",
+    "snoowrap": "^1.15.2",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.3",
+    "@types/node": "^8.9.4"
+  }
+}

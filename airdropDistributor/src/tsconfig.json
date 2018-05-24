@@ -1,0 +1,25 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "lib": ["es6"],
+        "outDir": "../build",
+        "sourceMap": true,
+        "watch": true,
+        "module": "commonjs",
+        "noImplicitReturns": true,
+        "removeComments": true,
+        "target": "es6",
+        "types": [
+            "node", 
+        ]
+    },
+    "exclude": [
+        "_scratch/",
+        ".vscode/",
+        "build/",
+        "node_modules/",
+        ".gitignore",
+        "package.json",
+        "readme.md"
+    ]
+}
