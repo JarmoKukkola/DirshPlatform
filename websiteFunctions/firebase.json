@@ -16,6 +16,10 @@
       {
         "source": "/checkRecaptcha",
         "function": "checkRecaptcha"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
