@@ -1,0 +1,118 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-tabs .scroll-content,
+ion-content .scroll-content {
+  // scrollbar
+  overflow-y: auto;
+}
+
+.toolbar-background {
+  background-color: map-get($colors, primaryDark);
+}
+
+.text_center {
+  // background-color: $primaryDark;
+  padding: 32px;
+  text-align: center;
+  color:black;
+  // font-family:$font-text;
+}
+
+.center-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centerButton {
+  text-transform: none;
+  font-weight: normal;
+  // padding: 0px;
+  // margin: 0px;
+  // width: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  // align-items: center;
+  height: $button-md-large-height;
+  font-size: $button-md-large-font-size;
+}
+
+ion-header {
+  ion-navbar {
+    ion-icon {
+      color: map-get($colors, light);
+    }
+  }
+}
+
+.side-by-side-buttons .alert-button-group{
+  display: flex;
+  flex-direction: row;
+}
+
+.toolbar-title.toolbar-title-md{
+  color: map-get($colors, light);
+  font-weight: bold;
+}
+
+.tabs {
+  .tab-button {
+    .tab-button-text {
+      text-transform: capitalize;
+      font-weight: normal;
+      font-size: 1.6rem;
+      color: map-get($colors, light);
+    }
+  }
+}
+
+.tabbar a[aria-selected=true] {
+  border-top: 2px;
+  border-style: solid;
+  border-color: map-get($colors, light);
+}
+
+.fill-space{
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%
+}
+
+.no-padding {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.fill-width{
+  width: 100%
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.selectable{
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

@@ -1,0 +1,12 @@
+<div class="topic_white">
+  Info
+</div>
+
+<shadow></shadow>
+
+<div class="lightContainer">
+  <div class="key_features">
+    <key-specs *ngFor="let item of items;let i = index;" name="{{item[0]}}" icon="{{item[1]}}" (click)="item[2]()" [highlight]="false"
+      [popup]="false"></key-specs>
+  </div>
+</div>

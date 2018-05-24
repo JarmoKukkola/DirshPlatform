@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Receive</ion-title>
+    <ion-buttons right>
+      <button *ngIf="firebaseProvider.isApp()" ion-button icon-only (click)=share()>
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label text-wrap class="selectable">My Address: {{myAddress}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Token Type</ion-label>
+      <ion-select [(ngModel)]="tokenType" (ngModelChange)="onChange()">
+        <ion-option *ngFor="let tokenType of tokenTypes" [value]="tokenType">{{tokenType}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Amount ({{tokenType}})</ion-label>
+      <ion-input clearInput type="number" [(ngModel)]="amount" (ngModelChange)="onChange()"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating color="primary">Message</ion-label>
+      <ion-input clearInput type="text" [(ngModel)]="message" (ngModelChange)="onChange()"></ion-input>
+      <ion-icon color="primary" item-start name="bulb" (click)="generateMessage()"></ion-icon>
+    </ion-item>
+
+  </ion-list>
+
+  <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="value" qrc-class="aclass" qrc-errorCorrectionLevel="L">
+  </ngx-qrcode>
+</ion-content>

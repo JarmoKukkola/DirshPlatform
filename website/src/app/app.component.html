@@ -1,0 +1,51 @@
+<div class="logo-container">
+  <a routerLink="/" routerLinkActive="active">
+    <div class="logo_title">
+      <img class="logo" alt="Dirsh" src="assets/logo.svg">
+      <h1 class="title no-padding">
+        Dirsh
+      </h1>
+    </div>
+  </a>
+  <div class="alignRight">
+    <button *ngIf = "mobileSize" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button *ngFor="let item of menuButtons" mat-menu-item routerLink={{item[1]}}>
+        <span class="text_black">{{item[0]}}</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div *ngIf="!mobileSize" class="alignRight">
+    <button *ngFor="let item of menuButtons" mat-button routerLink={{item[1]}}>
+      <span class="text_black">{{item[0]}}</span>
+    </button>
+  </div>
+</div>
+
+<shadow></shadow>
+
+<router-outlet></router-outlet>
+
+<shadow></shadow>
+
+<div class="footer_section">
+  <div class="text_black" style="padding:16px;padding-left:24px">
+    Copyright (c) Dirsh Platform.
+  </div>
+  <div class="menu_buttons">
+    <a href="https://twitter.com/DirshPlatform">
+      <img class="menu_icon" src="assets/t_logo.svg" alt="Twitter ">
+    </a>
+    <a href="https://t.me/DirshPlatform">
+      <img class="menu_icon" src="assets/telegram.svg" alt="Telegram">
+    </a>
+    <a href="https://www.reddit.com/r/Dirsh">
+      <img class="menu_icon" src="assets/reddit.gif" alt="Reddit ">
+    </a>
+    <a href="https://github.com/JarmoKukkola/DirshPlatform">
+      <img class="menu_icon" src="assets/g_logo.svg" alt="Github">
+    </a>
+  </div>
+</div>

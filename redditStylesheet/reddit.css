@@ -1,0 +1,25 @@
+.tabmenu #viewImagesButton,
+.tabmenu li a[href$="/controversial/"] {
+    display: none;
+}
+
+#sr-header-area a {
+    color: #FFFFFF;
+}
+
+.sr-bar .separator {
+    color: #335A6F;
+}
+
+#header {
+    border-bottom-color: #FFFFFF;
+    background-color: #335A6F;
+}
+
+#sr-header-area {
+    border-bottom-color: #FFFFFF;
+}
+
+.redditname {
+    visibility: hidden;
+}

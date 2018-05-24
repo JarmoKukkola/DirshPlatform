@@ -1,0 +1,11 @@
+<div class="topic_white">
+  {{password?'Unlock a gift card by solving the reCAPTCHA':'Invalid page'}}
+</div>
+
+<shadow></shadow>
+
+<div class="lightContainer" >
+  <div class="key_features" *ngIf="password">
+    <re-captcha  style="padding-top:25px;" (resolved)="submit($event)" required siteKey="6LdteUwUAAAAACLzIona9q270ou_GNRjS1-g9jPw"></re-captcha>
+  </div>
+</div>

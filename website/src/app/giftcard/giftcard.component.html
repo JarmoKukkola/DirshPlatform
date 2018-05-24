@@ -1,0 +1,16 @@
+<div class="topic_white" *ngIf="!id">
+  Malformed link.
+</div>
+<div class="topic_white" *ngIf="id">
+  Gift card key: {{id}}
+</div>
+<div class="topic_white" *ngIf="id">
+  Either copy and paste the key to reclaim gift card section of wallet
+</div>
+<div class="topic_white" *ngIf="id">
+  Or scan the following with the mobile app
+  <div style="padding:32px">
+    <ngx-qrcode [qrc-element-type]="elementType" qrc-value="{{'C:'+id}}" qrc-class="aclass" qrc-errorCorrectionLevel="L">
+    </ngx-qrcode>
+  </div>
+</div>

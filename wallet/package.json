@@ -1,0 +1,112 @@
+{
+  "name": "com.dirsh.wallet",
+  "version": "1.0.0",
+  "author": "Dr. Jarmo Kukkola",
+  "homepage": "http://www.dirsh.com/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve",
+    "start": "ionic-app-scripts serve",
+    "electron dist": "electron .",
+    "ebuild": "npm run build --prod && electron-packager . --asar --icon=icon.ico --platform=win32 --arch=ia32 --no-prune --ignore=/node_modules --ignore=/resources --ignore=/src --ignore=/platforms --overwrite"
+  },
+  "dependencies": {
+    "@angular/common": "5.0.3",
+    "@angular/compiler": "5.0.3",
+    "@angular/compiler-cli": "5.0.3",
+    "@angular/core": "5.0.3",
+    "@angular/forms": "5.0.3",
+    "@angular/http": "5.0.3",
+    "@angular/platform-browser": "5.0.3",
+    "@angular/platform-browser-dynamic": "5.0.3",
+    "@ionic-native/barcode-scanner": "^4.6.0",
+    "@ionic-native/core": "4.4.0",
+    "@ionic-native/in-app-browser": "^4.7.0",
+    "@ionic-native/social-sharing": "4.4.0",
+    "@ionic-native/splash-screen": "4.4.0",
+    "@ionic-native/status-bar": "4.4.0",
+    "@ionic/storage": "2.1.3",
+    "@ngx-translate/core": "8.0.0",
+    "@ngx-translate/http-loader": "0.1.0",
+    "android-versions": "^1.3.0",
+    "axios": "^0.18.0",
+    "cordova-android": "^7.1.0",
+    "cordova-plugin-browsertab": "^0.2.0",
+    "cordova-plugin-buildinfo": "^2.0.1",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-inappbrowser": "^3.0.0",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^1.1.16",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-plugin-x-socialsharing": "^5.2.1",
+    "cordova-sqlite-storage": "^2.2.0",
+    "cordova-universal-links-plugin": "git+https://github.com/walteram/cordova-universal-links-plugin.git",
+    "crypto": "^1.0.1",
+    "es6-promise-plugin": "^4.1.0",
+    "firebase": "4.8.0",
+    "firebaseui": "2.7.0",
+    "ionic-angular": "3.9.2",
+    "ionic-plugin-keyboard": "^2.2.1",
+    "ionicons": "3.0.0",
+    "mkpath": "^1.0.0",
+    "node-version-compare": "^1.0.1",
+    "phonegap-plugin-barcodescanner": "^7.1.0",
+    "plist": "^3.0.1",
+    "promise-polyfill": "7.1.0",
+    "qrcode": "1.2.0",
+    "qs": "^6.5.2",
+    "randombytes": "^2.0.6",
+    "rxjs": "5.5.2",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.18"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.1.8",
+    "electron": "2.0.1",
+    "electron-builder": "^20.13.4",
+    "typescript": "2.4.2"
+  },
+  "description": "Dirsh (Direct Cash) is a Private Scalable Instant Payment Platform",
+  "cordova": {
+    "plugins": {
+      "ionic-plugin-keyboard": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-buildinfo": {},
+      "cordova-plugin-browsertab": {},
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-sqlite-storage": {},
+      "cordova-universal-links-plugin": {},
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-inappbrowser": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  },
+  "config": {
+    "ionic_source_map": "source-map",
+    "ionic_bundler": "webpack",
+    "ionic_webpack": "./config/webpack.config.js"
+  },
+  "main": "electron/electron.js",
+  "build": {
+    "appId": "com.dirsh.wallet",
+    "electronVersion": "^2.0.0",
+    "asar": false,
+    "files": [
+      "www/**/*",
+      "electron/*"
+    ]
+  }
+}

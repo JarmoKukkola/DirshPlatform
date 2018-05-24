@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Created Gift Cards</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="!items||items.length==0" padding>
+    There are no unused gift cards.
+  </div>
+
+  <ion-list [virtualScroll]="items" class="no-padding fill-width" [approxItemHeight]="'70px'">
+    <button ion-item *virtualItem="let item;let i=index" class="no-padding fill-width" style="height:70px" (click)="clicked(i)">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="bold" col-auto>
+            {{item.tokenType}}
+          </ion-col>
+          <ion-col>
+            {{item.amount}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-content class="no-padding">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="!items||items.length==0">
+    {{getEmptyText()}}
+  </div>
+  <ion-list [virtualScroll]="items" class="no-padding" [approxItemHeight]="'200px'">
+
+    <ion-item *virtualItem="let item;let i=index" class="no-padding fill-width">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="bold" col-auto>
+            Date
+          </ion-col>
+          <ion-col>
+            {{item.time | date:'medium'}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="bold" col-auto>
+            Amount
+          </ion-col>
+          <ion-col>
+            {{item.amount}} {{item.tokenType}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="bold" col-auto>
+            {{getParticipantType()}}
+          </ion-col>
+          <ion-col>
+            {{getParticipant(item)?getParticipant(item):('UNKNOWN'|translate)}}
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="item.message&&item.message.length">
+          <ion-col class="bold" col-auto>
+            Message
+          </ion-col>
+          <ion-col>
+            {{item.message}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

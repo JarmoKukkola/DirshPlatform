@@ -1,0 +1,21 @@
+<ion-content padding>
+    <div *ngIf="!items||items.length==0">
+        Zero balance
+    </div>
+    <ion-list [virtualScroll]="items" class="no-padding fill-width" [approxItemHeight]="'70px'">
+
+        <ion-item *virtualItem="let item;let i=index" class="no-padding fill-width" style="height:70px">
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="bold" col-auto>
+                        {{item.time|date:'medium'}}
+                    </ion-col>
+                    <ion-col col-auto>
+                        {{item.amount}} Dirsh to {{item.receiver}}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+    </ion-list>
+</ion-content>

@@ -1,0 +1,1 @@
+firebase deploy --project dirsh-d6d60

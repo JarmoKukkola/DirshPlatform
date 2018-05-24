@@ -1,0 +1,7 @@
+.idea
+**/node_modules/*
+**/.firebaserc
+functions/lib/feedbackAccount.json
+functions/lib/mainAccount.json
+functions/lib/recaptcha.json
+

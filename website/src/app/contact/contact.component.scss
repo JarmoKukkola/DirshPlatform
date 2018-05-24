@@ -1,0 +1,24 @@
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.contact_form {
+  display: flex;
+  // background: $primary;
+  min-height: 128px;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.button-row {
+  margin:16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

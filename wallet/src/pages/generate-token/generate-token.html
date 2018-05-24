@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create Custom Token</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="createCustomToken()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" stacked>Name (3 to 20 letters or numbers)</ion-label>
+      <ion-input stacked type="text" [(ngModel)]="name" placeholder="Name of Token"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap color="primary" stacked>Total Supply ({{minTotalSupply}} to {{maxTotalSupply}})</ion-label>
+      <ion-input [min]="minTotalSupply" [max]="maxTotalSupply" step="1" stacked type="number" [(ngModel)]="totalSupply"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-note item-end>
+        Creating a custom token costs 1000 {{firebase.defaultTokenName()}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

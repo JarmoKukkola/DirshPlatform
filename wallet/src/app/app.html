@@ -1,0 +1,51 @@
+<ion-menu [content]="content" [swipeEnabled]="false" menuClose>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list no-lines>
+      <div *ngIf="firebaseProvider.isLoggedIn">
+        <button ion-item menuClose (click)="coupons()">
+          Gift Cards
+        </button>
+        <button ion-item menuClose (click)="createToken()">
+          Create Token
+        </button>
+        <button ion-item menuClose (click)="apiKey()">
+          API Key
+        </button>
+        <button ion-item menuClose (click)="deleteAccount()">
+          Delete Account
+        </button>
+        <hr>
+      </div>
+      <button ion-item menuClose (click)="feedback()">
+        Feedback
+      </button>
+      <button ion-item menuClose (click)="statistics()">
+        Statistics
+      </button>
+      <!-- <div *ngIf="isMobile()"> -->
+        <!-- <button ion-item menuClose (click)="shareApp()"> -->
+          <!-- Share App -->
+        <!-- </button> -->
+        <!-- <button ion-item menuClose (click)="rateApp()"> -->
+          <!-- Rate App -->
+        <!-- </button> -->
+      <!-- </div> -->
+      <button ion-item menuClose (click)="goToWebsite()">
+        Go to www.dirsh.com
+      </button>
+      <div *ngIf="firebaseProvider.isLoggedIn">
+        <hr>
+        <button ion-item menuClose (click)="logout()">
+          Log Out
+        </button>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

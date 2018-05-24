@@ -1,0 +1,24 @@
+<ion-content class="no-padding">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="!items||items.length==0">
+    Zero balance
+  </div>
+  <ion-list [virtualScroll]="items" class="no-padding fill-width" [approxItemHeight]="'70px'">
+
+    <ion-item *virtualItem="let item;let i=index" class="no-padding fill-width" style="height:70px">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="bold" col-auto>
+            {{item.key}}
+          </ion-col>
+          <ion-col>
+            {{firebaseProvider.roundDown(item.value)}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

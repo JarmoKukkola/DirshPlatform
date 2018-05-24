@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      {{ 'APP_NAME' | translate }}
+    </ion-title>
+    <ion-buttons right>
+        <button ion-button icon-only (click)=reloadTabs()>
+            <ion-icon name="refresh"></ion-icon>
+          </button>
+      <button ion-button icon-only (click)=receive()>
+        <ion-icon name="filing"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)=send()>
+        <ion-icon name="card"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-tabs #overviewTabs>
+    <ion-tab [root]="tab1Root" tabTitle="Balance" (ionSelect)="reloadTabs(0)" rootParams="{{0}}" ></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Received" (ionSelect)="reloadTabs(1)" rootParams="{{1}}"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Sent" (ionSelect)="reloadTabs(2)" rootParams="{{2}}"></ion-tab>
+  </ion-tabs>
+
+</ion-content>

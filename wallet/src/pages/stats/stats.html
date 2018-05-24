@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Statistics</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-label text-wrap stacked color="dark">Burned Tokens (total supply is 90 000 000 minus this value)</ion-label>
+        <ion-input disabled="true" [ngModel]="burnedDirsh"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="dark">Number of Token Types</ion-label>
+        <ion-input disabled="true" [ngModel]="tokenTypes"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="dark">Airdrop Round</ion-label>
+        <ion-input disabled="true" [ngModel]="airdropRound"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="dark">Airdrop Balance</ion-label>
+        <ion-input disabled="true" [ngModel]="airdropBalance"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="dark">Bounties: Article</ion-label>
+        <ion-input disabled="true" [ngModel]="articleBalance"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="dark">Bounties: Community</ion-label>
+        <ion-input disabled="true" [ngModel]="communityBalance"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="dark">Bounties: OpenSource</ion-label>
+        <ion-input disabled="true" [ngModel]="openSourceBalance"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="dark">Bounties: Youtube</ion-label>
+        <ion-input disabled="true" [ngModel]="youtubeBalance"></ion-input>
+      </ion-item>
+  </ion-list>
+
+</ion-content>

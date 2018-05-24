@@ -1,0 +1,27 @@
+<div class="topic_white">
+  Contact Form
+</div>
+
+<shadow></shadow>
+
+<div class="lightContainer">
+  <div class="key_features">
+    <div class="button-row">
+      <button mat-raised-button (click)="readPrivacyPolicy()" color="primary">Read Privacy Policy</button>
+      <mat-checkbox style="padding-left:16px" [(ngModel)]="checked">Consent to Privacy Policy</mat-checkbox>
+    </div>
+    <form *ngIf="checked" class="form" style="padding:16px" #captchaProtectedForm="ngForm">
+      <mat-form-field class="full-width">
+        <input maxLength="50" matInput placeholder="Email" type="Email" [formControl]="emailCtrl" email>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input maxLength="50" matInput placeholder="Topic (required)" type="text" [formControl]="topicCtrl">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea maxLength="300" matInput placeholder="Content (required)" type="text" [formControl]="contentCtrl" matTextareaAutosize></textarea>
+      </mat-form-field>
+      <re-captcha [(ngModel)]="formModel.captcha" name="captcha" required siteKey="6LerAkUUAAAAAA2whBtFYPTLEUwLB-3oYLOhIHhG" #captchaControl="ngModel"></re-captcha>
+      <button mat-raised-button style="margin:16px" (click)="send()">Send</button>
+    </form>
+  </div>
+</div>

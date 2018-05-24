@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Api Key</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="text_center">
+    Api Key can be used by robots to send tokens.
+  </div>
+  <div class="text_center selectable">
+    REST API request to https://us-central1-dirsh-d6d60.cloudfunctions.net/send?key="API_KEY"&account="YOUR_ADDRESS"&receiver="RECEIVER_ADDRESS"&type="TOKEN_TYPE"&amount="AMOUNT"
+  </div>
+  <div *ngIf="apikey" class="text_center selectable">
+    For example, https://us-central1-dirsh-d6d60.cloudfunctions.net/send?key={{this.apikey}}&account={{this.firebase.getUid()}}&receiver=CCCCCCCCCCCCCCCCCCCCCCCCCCC1&type=Dirsh&amount=100
+  </div>
+  <button *ngIf="!apikey" ion-button class="centerButton" (click)="create()">Create Api Key</button>
+  <button *ngIf="apikey" ion-button class="centerButton" (click)="delete()">Delete Api Key</button>
+  <div *ngIf="apikey" class="text_center selectable">
+    Active API key {{apikey}}
+  </div>
+</ion-content>

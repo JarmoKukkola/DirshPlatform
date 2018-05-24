@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Feedback</string>
+    <string name="delete_forever">Delete Forever</string>
+    <string name="delete">Delete</string>
+    <string name="restore">Restore</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="time">Time</string>
+    <string name="topic">Topic</string>
+    <string name="content">Content</string>
+    <string name="archive">Archive</string>
+</resources>

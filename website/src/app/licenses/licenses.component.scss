@@ -1,0 +1,18 @@
+@import '../variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+
+.text_link {
+  color: black;
+  text-align: center;
+  font-family: $font-text;
+  text-decoration: none;
+  font-size: $textSize;
+  margin-top:16px;
+  margin-left: auto;
+  margin-right: auto;
+}

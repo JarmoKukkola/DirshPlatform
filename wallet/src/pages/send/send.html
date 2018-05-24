@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Send</ion-title>
+    <ion-buttons *ngIf="sufficientDefaultToken" right>
+        <button *ngIf="firebaseProvider.isApp()" ion-button icon-only (click)=scanBarcode()>
+            <ion-icon name="barcode"></ion-icon>
+          </button>
+        <button *ngIf="amount&&amount>=1&&amount<=balances[token]-(token=='Dirsh'?firebaseProvider.transactionFee:0)
+          &&receiverAddress.length==28" ion-button icon-only (click)=send()>
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="!sufficientDefaultToken">Insufficient {{firebaseProvider.defaultTokenName()}} balance</div>
+    <ion-list *ngIf="sufficientDefaultToken">
+      <ion-item>
+        <ion-label floating>Receiver Address</ion-label>
+        <ion-input type="text" clearInput [(ngModel)]="receiverAddress"></ion-input>
+      </ion-item>
+
+        <ion-item>
+            <ion-label text-wrap>Token Type</ion-label>
+            <ion-select [(ngModel)]="token">
+              <ion-option *ngFor="let token of tokenTypes" [value]="token" (ionSelect)="tokenTypeChanged($event)">{{token}}</ion-option>
+            </ion-select>
+          </ion-item>
+      
+        <ion-item>
+          <ion-label text-wrap floating>Amount (min 1 {{token}})</ion-label>
+          <ion-input clearInput type="number" min="0.1" max="{{balances[token]}}" [(ngModel)]="amount"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Transaction fee : {{transactionFeeText+' '+firebaseProvider.defaultTokenName()}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Message</ion-label>
+          <ion-input  maxlength="10" clearInput type="text" [(ngModel)]="message"></ion-input>
+        </ion-item>
+      
+      </ion-list>
+
+      <ion-list *ngIf="sufficientDefaultToken">        
+        <ion-item>
+          <ion-label text-wrap>Share Your Address (useful for refunds)</ion-label>
+          <ion-checkbox [(ngModel)]="shareSendingAddress" (ionChange)="updateShareAddress()"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+</ion-content>
+
+<whole-balance
+  *ngIf="sufficientDefaultToken"
+  balance="{{balances[token]}}"
+  token="{{token}}"
+  [isCoupon]="false"
+  (setAmount)="setAmount($event)"></whole-balance>

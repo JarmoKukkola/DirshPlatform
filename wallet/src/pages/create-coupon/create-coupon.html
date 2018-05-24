@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create Gift Card</ion-title>
+    <ion-buttons *ngIf="amount>=1&&amount<=balances[token]" right>
+        <button ion-button icon-only (click)="createCoupon()">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="insufficientBalance">
+    Insufficient {{firebase.defaultTokenName()}} balance.
+  </div>
+  <ion-list *ngIf="!insufficientBalance">
+    <ion-item>
+      <ion-label>Token Type</ion-label>
+      <ion-select [(ngModel)]="token">
+        <ion-option *ngFor="let token of tokens">{{token.tokenType}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Amount</ion-label>
+      <ion-input [(ngModel)]="amount" min="1" max="{{balances[token]}}" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-note item-end>
+        Creating a gift card costs 0.5 {{firebase.defaultTokenName()}}
+      </ion-note>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
+
+
+<whole-balance
+  *ngIf="!insufficientBalance"
+  balance="{{balances[token]}}"
+  token="{{token}}"
+  [isCoupon]="true"
+  (setAmount)="setAmount($event)"></whole-balance>

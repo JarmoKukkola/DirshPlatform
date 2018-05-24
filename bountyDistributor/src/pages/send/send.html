@@ -1,0 +1,25 @@
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Pool</ion-label>
+      <ion-select [(ngModel)]="type" (ionChange)="onPoolSelect()">
+        <ion-option value="article">Article: {{items.article}}</ion-option>
+        <ion-option value="community">Community: {{items.community}}</ion-option>
+        <ion-option value="openSource">Open Source: {{items.openSource}}</ion-option>
+        <ion-option value="youtube">Youtube: {{items.youtube}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Receiver Address</ion-label>
+      <ion-input [(ngModel)]="address" clearInput type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Amount</ion-label>
+      <ion-input [(ngModel)]="amount" clearInput type="number" step=1 min=1 max={{this.items[this.type]}}></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button *ngIf="type&&address&&address.length==28&&amount>=1&&amount<this.items[this.type]" ion-button block padding (click)="submit()">Send</button>
+</ion-content>

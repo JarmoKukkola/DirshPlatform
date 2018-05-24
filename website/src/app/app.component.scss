@@ -1,0 +1,208 @@
+@import './variables.scss';
+
+.no-padding {
+  padding: 0;
+  margin: 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  align-content: center;
+  flex-flow: row wrap;
+}
+
+.logo_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  float: left;
+  flex-flow: row;
+}
+
+.menu_buttons {
+  margin-left: auto;
+  display: flex;
+  padding-right: 16px;
+  flex-flow: row;
+}
+
+.menu_icon {
+  width: 32px;
+  height: 32px;
+  top: 32px;
+  margin:8px;
+}
+
+.menu_button {
+  font-size: 32px;
+  width: 32px;
+  height: auto;
+  color: black;
+  top: 32px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  padding: 16px;
+}
+
+.title {
+  font-family: $font-title;
+  justify-content: space-around;
+  align-self: center;
+  color:black;
+  padding-bottom: 0px;
+  font-size: 2.5em;
+}
+
+.lightContainer{
+  width: 100%;
+  align-content: center;
+  background-color: $primary;
+}
+
+
+.topic_white {
+  background-color: $primaryDark;
+  padding: 32px;
+  color: white;
+  font-family: $font-text;
+  font-size: $topicSize;
+  text-align: center;
+}
+
+.key_features {
+  margin: auto;
+  display: flex;
+  background: $primary;
+  min-height: 128px;
+  justify-content: center;
+  flex-flow: row wrap;
+  max-width: 1200px;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  float: left;
+  flex-flow: column wrap;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.download_section {
+  margin: auto;
+  display: flex;
+  background: $primary;
+  justify-content: center;
+  flex-flow: row wrap;
+  min-height: 80px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  // flex-direction: column;
+}
+
+.download_column {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px;
+}
+
+.download_badge {
+  width: auto;
+  height: 64px;
+  align-self: center
+}
+
+.text_black {
+  color: black;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+  font-family: $font-text;
+  text-decoration: none;
+  font-size:$textSize;
+}
+
+.padding{
+  padding:16px;
+}
+
+.text_white {
+  @extend .text_black;
+  color: white;
+}
+
+.icon {
+  font-size: 64px;
+  color: black;
+  padding-bottom: 8px;
+}
+
+.footer_section {
+  display: flex;
+  width: 100%;
+  min-height: 88px;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+.tabs {
+  align-items: center;
+  background: $primaryDark;
+}
+
+.tab {
+  background: $primaryDark;
+  color: white;
+}
+
+.mat-tab-label {
+  color: white;
+  font-family: $font-text;
+}
+
+.mat-tab-label-active {
+  color: white;
+  background-color: $primaryDark !important;
+  opacity: 1 !important;
+}
+
+.mat-tab-label-focus {
+  color: white;
+  background-color: $primaryDark !important;
+  opacity: 1 !important;
+}
+
+.mat-ink-bar {
+  background-color: white !important;
+}
+
+.alignRight{
+  margin-left:auto;
+}
+
+.slideContainer{
+  background-color: $primaryDark;
+}   
+
+.slideItem{
+  width:800px;
+  margin:auto;
+  white-space: pre-line;
+}
+
+pre {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}

@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Reclaim</ion-title>
+    <ion-buttons right>
+      <button *ngIf="firebase.isApp()" ion-button icon-only (click)=scanBarcode()>
+        <ion-icon name="barcode"></ion-icon>
+      </button>
+      <button *ngIf="giftCardCode&&giftCardCode.length==30" ion-button icon-only (click)="reclaim()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="text_center">Insert a key to reclaim a gift card.</div>
+  <ion-item>
+    <ion-label floating>Key</ion-label>
+    <ion-input clearInput type="text" [(ngModel)]="giftCardCode"></ion-input>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1024px" height="500px" viewBox="128 -58 1024 500" enable-background="new 128 -58 1024 500" xml:space="preserve">
+<path fill="#5C9BBB" d="M708.194-58L465.261,184.94l-47.502-47.502l-21.604-21.591l-21.592,21.59L128,384v-0.001V-58H708.194z"/>
+<path fill="#335A6F" d="M1152-58v499.999H156.396l165.933-165.935l65.596-65.61l8.231-8.231l47.516,47.5l21.595,21.594
+	L794.58-57.999L1152-58z"/>
+<path fill="#FFEC00" d="M751.4-57.999l-286.14,286.138l-69.106-69.104L128,427.187v-43.186l246.563-246.568l21.592-21.591
+	l21.604,21.591l47.502,47.502L708.194-58L751.4-57.999z"/>
+<path fill="#DEB60E" d="M794.58-57.999L486.854,249.729l-21.593,21.592l-21.595-21.592l-47.519-47.502l-8.229,8.23l-65.596,65.613
+	L156.395,441.998L128,442v-14.813l268.148-268.148l69.11,69.106L751.4-57.999H794.58z"/>
+<text transform="matrix(1 0 0 1 692.7822 256.8428)" fill="#5C9BBB" font-family="'ArialMT'" font-size="183.1633">Dirsh</text>
+</svg>
