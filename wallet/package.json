@@ -68,8 +68,8 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.8",
-    "electron": "2.0.1",
-    "electron-builder": "^20.13.4",
+    "electron": "2.0.2",
+    "electron-builder": "^20.14.7",
     "typescript": "2.4.2"
   },
   "description": "Dirsh (Direct Cash) is a Private Scalable Instant Payment Platform",
