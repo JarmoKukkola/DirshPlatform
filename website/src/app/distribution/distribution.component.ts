@@ -118,8 +118,6 @@ export class DistributionComponent {
 
       The contribution has to follow GPL 3.0 license.
 
-      Your have to give permission to put your real name, picture and github profile on the list of contributors on our website.
-      
       Reclaim your bounties by using the contact form (top of the page).
       `,
       'code'

@@ -8,31 +8,41 @@
 <pre class="key_features text_black padding">
 <b>Personal identification information</b>
 
-We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our site, register on the site, fill out a form and in connection with other activities, services, features or resources we make available on our Site. Users may be asked for, as appropriate, an email address.
+We collect personal identification information from users, when users log in to the wallet or fill contact form. When you log in to the wallet with your Google Account, your email address will be saved to Firebase Authentication. Users may or may not provide an email address, when contacting us via the contact form.
       
 Users may, however, visit our Site anonymously.
       
 We will collect personal identification information from Users only if they voluntarily submit such information to us. Users can always refuse to supply personally identification information, except that it may prevent them from engaging in certain Site related activities.
-      
-<b>Non-personal identification information</b>
 
-We may collect non-personal identification information about Users whenever they interact with our Site. Non-personal identification information may include the browser name, the type of computer and technical information about Users means of connection to our Site, such as the operating system and the Internet service providers utilized and other similar information.
-      
 <b>Web browser cookies</b>
 
-Our Site may use "cookies" to enhance User experience. User's web browser places cookies on their hard drive for record-keeping purposes and sometimes to track information about them. User may choose to set their web browser to refuse cookies, or to alert you when cookies are being sent. If they do so, note that some parts of the Site may not function properly.
-      
+Our website does not utilize cookies. The wallet app for Windows and Android, may retain your account related data until you log out.
+
+<b>Non-personal identification information</b>
+
+No data about the user activities will be stored, when interacting with the website (excluding the contact form).
+
+When interaction with the wallet, non-personal information about the users is stored to Firebase Realtime Database depending on user activities. You may, check the exact types of data stored in Firebase Realtime Database from the source code of Dirsh available on Github (https://github.com/JarmoKukkola/DirshPlatform).
+
 <b>How we use collected information</b>
 
 Dirsh collects and uses Users personal information for the following purposes:
       
 To personalize user experience
 
-We may use information in the aggregate to understand how our Users as a group use the services and resources provided on our Site.
+Google log in used to identify your personal Dirsh account.
 
 To send email correspondes
       
-The email address Users provide for feedback processing, will only be used to send them information and updates pertaining to their request. It may also be used to respond to their inquiries, and/or other requests or questions. If at any time the User would like to unsubscribe from receiving future emails, User may contact us via our Site.
+The email address Users provide for feedback processing, will only be used to send them information and updates pertaining to their request. It may also be used to respond to their inquiries, and/or other requests or questions. If at any time the User would like to unsubscribe from receiving future emails, User may contact us via our contact form.  Email addresses collected from wallet are used only for identifying your account and sending security related warnings. Email addresses collected from contact form are only used for correspondence and are subsequently deleted.
+
+<b>How your personal information is stored</b>
+
+Your personal information is stored on the Firebase Authentication and Firebase Realtime Database systems. We take serious effort keep your information safe. We protect the data with passwords and two factor authentication. We do not take any backups your data.
+
+Messages and contact information send via our contact form are deleted from our database within 6 weeks.
+
+Your Google log in related data will remain in Firebase Authentication until you delete it yourself from the wallet via 'Settings-Delete Account'.
 
 <b>How we protect your information</b>
 
@@ -50,11 +60,11 @@ Dirsh uses Firebase Realtime Database and Firebase Authentication to provide our
       
 <b>Compliance with children's online privacy protection act</b>
 
-Protecting the privacy of the very young is especially important. For that reason, we never collect or maintain information at our Site from those we actually know are under 13, and no part of our website is structured to attract anyone under 13.
+Protecting the privacy of the very young is especially important. For that reason, we never collect or maintain information at our Site from those we actually know are under 18, and no part of our website is structured to attract anyone under 18.
 
 <b>Right to Be Forgotten</b>
 
-If you have contacted us via the contact form, you may request removal of you messages via the contact form. Please, state your email, so we can identify, which messages are yours. If you have user the wallet to log in, basic information about your social media account will be registered to Firebase Authentication. You are able to delete your login data with 'Delete Account' option in the wallet. If you choose to delete your account, you are not anymore able to access your tokens or transaction history of your account. In addition, we are not able to identify, which account is related to your social media account. If you choose to log in to the wallet after deletion of the account, a new account will created with a new account number.
+If you have contacted us via the contact form, you may request removal of you messages via the contact form. Please, state your email, so we can identify, which messages are yours. If you have user the wallet to log in, basic information about your Google account will be registered to Firebase Authentication. You are able to delete your login data with 'Delete Account' option in the wallet. The transaction history and account balances will not be deleted from our servers. If you choose to delete your account, you are not anymore able to access your tokens or transaction history of your account. In addition, we are not able to identify, which account is related to your social media account. However, sending tokens via REST API remains active, if you created API keys prior to deletion of your account. If you choose to log in to the wallet after deletion of the account, a new account will created with a new account number.
      
 <b>Changes to this privacy policy</b>
 

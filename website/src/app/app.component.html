@@ -8,7 +8,7 @@
     </div>
   </a>
   <div class="alignRight">
-    <button *ngIf = "mobileSize" mat-icon-button [matMenuTriggerFor]="menu">
+    <button *ngIf="mobileSize" mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
@@ -31,9 +31,28 @@
 <shadow></shadow>
 
 <div class="footer_section">
-  <div class="text_black" style="padding:16px;padding-left:24px">
-    Copyright (c) Dirsh Platform.
-  </div>
+  <table>
+    <tr>
+      <th>
+        <div class="text_black" style="padding:16px;padding-left:24px">
+          Copyright (c) Dirsh Platform.
+        </div>
+      </th>
+      <th>
+        <a class="text_black" href="https://dirsh.com/privacy-policy">
+          Privacy Policy
+        </a>
+      </th>
+      <th>
+        <a class="text_black" href="https://dirsh.com/terms-of-service">
+          Terms of Service
+        </a>
+      </th>
+    </tr>
+  </table>
+
+
+
   <div class="menu_buttons">
     <a href="https://twitter.com/DirshPlatform">
       <img class="menu_icon" src="assets/t_logo.svg" alt="Twitter ">
