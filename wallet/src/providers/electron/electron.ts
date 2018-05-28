@@ -20,6 +20,10 @@ export class ElectronProvider {
     return userAgent.indexOf(' electron/') > -1;
   }
 
+  quit(){
+    this.getElectron().remote.getCurrentWindow().close();
+  }
+
   clearStorage() {
     if (this.isElectron()) {
       //clear login data

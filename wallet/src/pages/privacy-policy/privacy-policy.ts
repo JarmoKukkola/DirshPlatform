@@ -1,6 +1,7 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, Content } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { ElectronProvider } from '../../providers/electron/electron';
 
 @IonicPage()
 @Component({
@@ -13,7 +14,7 @@ export class PrivacyPolicyPage {
 
   accepted:boolean=false;
 
-  constructor(public navCtrl: NavController, public platform:Platform) {
+  constructor(public navCtrl: NavController, public platform:Platform, private electron:ElectronProvider) {
   }
 
   acceptPrivacyPolicy(){
@@ -26,6 +27,10 @@ export class PrivacyPolicyPage {
   }
 
   quit(){
-    this.platform.exitApp();
+    if(this.electron.isElectron()){
+      this.electron.quit();
+    }else{
+      this.platform.exitApp();
+    }
   }
 }
