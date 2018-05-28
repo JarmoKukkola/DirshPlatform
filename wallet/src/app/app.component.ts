@@ -8,10 +8,11 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { LoaderProvider } from '../providers/loader/loader';
 import { TranslateService } from '@ngx-translate/core';
 import { ElectronProvider } from '../providers/electron/electron';
+import { PrivacyPolicyPage } from '../pages/privacy-policy/privacy-policy';
 
 @Component({ templateUrl: 'app.html' })
 export class MyApp {
-  rootPage: any = LoginPage;
+  rootPage: any = PrivacyPolicyPage;
   @ViewChild(Nav) nav;
 
   constructor(public platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
@@ -118,7 +119,7 @@ export class MyApp {
         that.electronProvider.clearStorage();
         that
           .nav
-          .setRoot(LoginPage);
+          .setRoot(PrivacyPolicyPage);
       }, (err) => {
         console.log(err);
       });

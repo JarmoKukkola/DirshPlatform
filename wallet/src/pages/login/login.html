@@ -11,18 +11,9 @@
 
 <ion-content>
   <div class="text_center">Private Scalable Instant Payment Platform</div>
-  <div class="center-content">
-    <ion-list>
-      <button ion-button (click)="readPrivacyPolicy()" full>Read privacy policy</button>
-      <ion-item>
-        <ion-label>I consent to privacy policy</ion-label>
-        <ion-checkbox [(ngModel)]="accepted"></ion-checkbox>
-      </ion-item>
-    </ion-list>
-  </div>
-  <div *ngIf="isElectron && accepted" class="center-content">
+  <div *ngIf="isElectron" class="center-content">
     <button ion-button (click)="loginWithGoogle()" full>Login with Google</button>
   </div>
 
-  <div *ngIf="!isElectron" [hidden]="!accepted" id="firebaseui-auth-container"></div>
+  <div *ngIf="!isElectron" id="firebaseui-auth-container"></div>
 </ion-content>

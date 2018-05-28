@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, IonicPage, Platform, PopoverController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import * as firebaseui from 'firebaseui';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { ElectronProvider } from '../../providers/electron/electron';
+import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy';
 
 @Component({ selector: 'page-login', templateUrl: 'login.html' })
 export class LoginPage {
 
   ui: any;
   giftCardCode: string;
-  accepted: boolean = false;
   isElectron:boolean=false;
 
   callback = () => {
@@ -27,15 +27,14 @@ export class LoginPage {
     public firebaseProvider: FirebaseProvider,
     public platform: Platform,
     private iab: InAppBrowser,
-    private electronProvider: ElectronProvider
+    private electronProvider: ElectronProvider, 
+    private popoverCtrl:PopoverController
   ) {
     this.giftCardCode = platform.getQueryParam('C');
     this.isElectron=this.electronProvider.isElectron();
   }
 
-  readPrivacyPolicy() {
-    this.iab.create('https://dirsh.com/privacy-policy');
-  }
+  privacyPolicy:string;
 
   loginWithGoogle(){
     this.electronProvider.loginWithGoogle(this.callback);

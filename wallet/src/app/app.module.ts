@@ -14,6 +14,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { ElectronProvider } from '../providers/electron/electron';
+import { PrivacyPolicyPageModule } from '../pages/privacy-policy/privacy-policy.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ElectronProvider } from '../providers/electron/electron';
     LoginPage
   ],
   imports: [
+    PrivacyPolicyPageModule,
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp, {
