@@ -16,9 +16,17 @@
   flex-flow: column;
 }
 
-.button-row {
-  margin:16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.button-padding {
+  height: fit-content;
+  position: relative;
+  top: 48px;
+}
+
+.custom-dialog-container {
+  display: block;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  padding:0px !important;
+  margin:0px !important;
 }

@@ -36,6 +36,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 import { HelpComponent } from './help/help.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PrivacyPolicyDialogComponent } from './privacy-policy-dialog/privacy-policy-dialog.component';
+import { TermsOfServiceDialogComponent } from './terms-of-service-dialog/terms-of-service-dialog.component';
 
 
 const routes: Routes = [
@@ -83,7 +85,9 @@ const routes: Routes = [
     InfoComponent,
     PrivacyPolicyComponent,
     TermsOfServiceComponent,
-    HelpComponent
+    HelpComponent,
+    PrivacyPolicyDialogComponent,
+    TermsOfServiceDialogComponent
   ],
   imports: [
     RecaptchaModule.forRoot(),
@@ -110,7 +114,7 @@ const routes: Routes = [
     // BrowserAnimationsModule,
     HttpClientModule
   ],
-  entryComponents: [DialogComponent],
+  entryComponents: [DialogComponent, PrivacyPolicyDialogComponent, TermsOfServiceDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

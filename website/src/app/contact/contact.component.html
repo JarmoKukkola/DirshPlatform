@@ -6,11 +6,8 @@
 
 <div class="lightContainer">
   <div class="key_features">
-    <div class="button-row">
-      <button mat-raised-button (click)="readPrivacyPolicy()" color="primary">Read Privacy Policy</button>
-      <mat-checkbox style="padding-left:16px" [(ngModel)]="checked">Consent to Privacy Policy</mat-checkbox>
-    </div>
-    <form *ngIf="checked" class="form" style="padding:16px" #captchaProtectedForm="ngForm">
+    <button *ngIf="!accepted" mat-raised-button class="button-padding" (click)="readPrivacyPolicy()" color="primary">Read Privacy Policy and Terms of Service</button>
+    <form *ngIf="accepted" class="form" style="padding:16px" #captchaProtectedForm="ngForm">
       <mat-form-field class="full-width">
         <input maxLength="50" matInput placeholder="Email" type="Email" [formControl]="emailCtrl" email>
       </mat-form-field>
@@ -25,3 +22,6 @@
     </form>
   </div>
 </div>
+<div *ngIf="!accepted" class="topic_white">
+    You must read and accept privacy policy and terms of service to use the contact form.
+  </div>
