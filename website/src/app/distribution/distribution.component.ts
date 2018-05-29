@@ -32,6 +32,8 @@ export class DistributionComponent {
 
       On average, one gift cards per 10 minutes is shared on random social media channel.
 
+      NOTICE: there is maximum one gift card available at any given moment in one of the social media platforms. The other platforms have nothing available.
+
       If nobody reclaims the shared gift card within 10 minutes, it will be destroyed and its value will be added to the next round.
 
       There will be totally 144 000 gift cards to reclaim.

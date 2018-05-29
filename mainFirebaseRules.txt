@@ -285,6 +285,80 @@
               	newData.val()==22500000
               )
               ||
+              (//reclaim coupon
+              (
+              	!root.child('users/'+auth.uid).exists()
+              	||
+              	(
+              	!newData.parent().parent().parent().parent().child('burned/apiKey/'+auth.uid).exists()
+              	&&
+              	!newData.parent().parent().child('pendingSent').exists()
+              	&&
+              	!newData.parent().parent().child('processingReceivedId').exists()
+              	&&
+              	!newData.parent().parent().child('latestTokenType').exists()
+              	)
+              )
+              &&
+              newData.parent().parent().child('latestCouponId').exists()
+              &&
+              newData.parent().parent().parent().parent()
+              	.child('coupons/'+newData.parent().parent().child('latestCouponId').val()).val()==null
+              &&
+              root.child('coupons/'+newData.parent().parent().child('latestCouponId').val()).exists()
+              &&
+              (data.exists()?data.val():0)-newData.val()+root
+              	.child('coupons/'+newData.parent().parent().child('latestCouponId').val()
+                      +'/amount').val()>-0.000000001
+              &&
+              (data.exists()?data.val():0)-newData.val()+root
+              	.child('coupons/'+newData.parent().parent().child('latestCouponId').val()
+                      +'/amount').val()<0.000000001
+             	&&
+             	root.child('coupons/'+newData.parent().parent().child('latestCouponId').val()
+                      +'/tokenType').val()==$tokenType
+              &&
+              newData.parent().parent().child('received/'+
+                  newData.parent().parent().child('latestCouponId').val()).exists()
+              &&
+              !data.parent().parent().child('received/'+
+                  newData.parent().parent().child('latestCouponId').val()).exists()  
+              )
+              ||
+              (//accepting pendingReceived
+                (
+                  !root.child('users/'+auth.uid).exists()
+              		||
+              		(
+                	!newData.parent().parent().parent().parent().child('burned/apiKey/'+auth.uid).exists()
+              		&&
+                	!newData.parent().parent().child('pendingSent').exists()
+             	 		&&
+                  newData.parent().parent().child('processingReceivedId').val()
+                	!=
+                	data.parent().parent().child('processingReceivedId').val()
+                  &&  
+              		!newData.parent().parent().child('latestTokenType').exists()
+              		&&
+              		!newData.parent().parent().child('latestCouponId').exists()
+                	)
+                )
+                &&
+              	newData.parent().parent().child('processingReceivedId').exists()
+                &&
+                newData.val()-(data.exists()?data.val():0)-data.parent().parent().child(
+                	'pendingReceived/'+newData.parent().parent()
+                  .child('processingReceivedId').val()+'/amount').val()<0.000000001
+                &&
+                newData.val()-(data.exists()?data.val():0)-data.parent().parent().child(
+                	'pendingReceived/'+newData.parent().parent()
+                  .child('processingReceivedId').val()+'/amount').val()>-0.000000001
+                &&
+                data.parent().parent()
+                  .child('pendingReceived/'+newData.parent().parent()
+                  .child('processingReceivedId').val()+'/tokenType').val()==$tokenType
+              )
+              ||
               (//sending tokens
             	!newData.parent().parent().parent().parent().child('burned/apiKey/'+auth.uid).exists()
               &&
@@ -325,34 +399,6 @@
                 	)
               	)
               )                
-              ||
-              (//accepting pendingReceived
-                !newData.parent().parent().parent().parent().child('burned/apiKey/'+auth.uid).exists()
-              	&&
-                !newData.parent().parent().child('pendingSent').exists()
-             	 	&&
-              	newData.parent().parent().child('processingReceivedId').exists()
-                &&
-                newData.parent().parent().child('processingReceivedId').val()
-                !=
-                data.parent().parent().child('processingReceivedId').val()
-              	&&
-              	!newData.parent().parent().child('latestTokenType').exists()
-              	&&
-              	!newData.parent().parent().child('latestCouponId').exists()
-                &&
-                newData.val()-data.val()-data.parent().parent().child(
-                	'pendingReceived/'+newData.parent().parent()
-                  .child('processingReceivedId').val()+'/amount').val()<0.000000001
-                &&
-                newData.val()-data.val()-data.parent().parent().child(
-                	'pendingReceived/'+newData.parent().parent()
-                  .child('processingReceivedId').val()+'/amount').val()>-0.000000001
-                &&
-                data.parent().parent()
-                  .child('pendingReceived/'+newData.parent().parent()
-                  .child('processingReceivedId').val()+'/tokenType').val()==$tokenType
-              )
               ||
               (//creating new custom tokens
                 !newData.parent().parent().parent().parent().child('burned/apiKey/'+auth.uid).exists()
@@ -461,40 +507,6 @@
                 )
               )
             	||
-              (//reclaim coupon
-              !newData.parent().parent().parent().parent().child('burned/apiKey/'+auth.uid).exists()
-              &&
-              !newData.parent().parent().child('pendingSent').exists()
-              &&
-              !newData.parent().parent().child('processingReceivedId').exists()
-              &&
-              !newData.parent().parent().child('latestTokenType').exists()
-              &&
-              newData.parent().parent().child('latestCouponId').exists()
-              &&
-              newData.parent().parent().parent().parent()
-              	.child('coupons/'+newData.parent().parent().child('latestCouponId').val()).val()==null
-              &&
-              root.child('coupons/'+newData.parent().parent().child('latestCouponId').val()).exists()
-              &&
-              (data.exists()?data.val():0)-newData.val()+root
-              	.child('coupons/'+newData.parent().parent().child('latestCouponId').val()
-                      +'/amount').val()>-0.000000001
-              &&
-              (data.exists()?data.val():0)-newData.val()+root
-              	.child('coupons/'+newData.parent().parent().child('latestCouponId').val()
-                      +'/amount').val()<0.000000001
-             	&&
-             	root.child('coupons/'+newData.parent().parent().child('latestCouponId').val()
-                      +'/tokenType').val()==$tokenType
-              &&
-              newData.parent().parent().child('received/'+
-                  newData.parent().parent().child('latestCouponId').val()).exists()
-              &&
-              !data.parent().parent().child('received/'+
-                  newData.parent().parent().child('latestCouponId').val()).exists()  
-              )
-              ||
               (// create apiKey
                 newData.parent().parent().parent().parent().child('burned/apiKey/'+auth.uid).exists()
                 &&
@@ -678,6 +690,7 @@
           	!newData.parent().child('pendingReceived/'+newData.val()).exists()
            	&&
             data.parent().child('pendingReceived/'+newData.val()).exists()
+            
           )
           "
         },
@@ -702,11 +715,16 @@
               newData.parent().parent().child('balances')
               	.child(data.child('tokenType').val()).exists()
               &&
-              newData.parent().parent().child('balances')
-              	.child(data.child('tokenType').val()).val()
-              >
-              data.parent().parent().child('balances')
-              	.child(data.child('tokenType').val()).val()
+              (
+              	!data.parent().parent().child('balances')
+              		.child(data.child('tokenType').val()).exists()
+								||              
+              	newData.parent().parent().child('balances')
+              		.child(data.child('tokenType').val()).val()
+              	>
+              	data.parent().parent().child('balances')
+              		.child(data.child('tokenType').val()).val()
+              )
               &&
               newData.parent().parent().child('received/'+$id).exists()
               &&

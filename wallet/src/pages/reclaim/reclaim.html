@@ -6,9 +6,6 @@
       <button *ngIf="firebase.isApp()" ion-button icon-only (click)=scanBarcode()>
         <ion-icon name="barcode"></ion-icon>
       </button>
-      <button *ngIf="giftCardCode&&giftCardCode.length==30" ion-button icon-only (click)="reclaim()">
-        <ion-icon name="checkmark"></ion-icon>
-      </button>
     </ion-buttons>
   </ion-navbar>
 
@@ -20,5 +17,16 @@
   <ion-item>
     <ion-label floating>Key</ion-label>
     <ion-input clearInput type="text" [(ngModel)]="giftCardCode"></ion-input>
+  </ion-item>
+
+  <ion-item no-lines *ngIf="giftCardCode&&giftCardCode.length<30">
+    <ion-label>Too short key</ion-label>
+  </ion-item>
+
+  <button class="centerButton" ion-button *ngIf="giftCardCode&&giftCardCode.length==30" full (click)="reclaim()">
+    Reclaim Gift Card
+  </button>
+  <ion-item no-lines *ngIf="giftCardCode&&giftCardCode.length>30">
+    <ion-label>Too long key</ion-label>
   </ion-item>
 </ion-content>

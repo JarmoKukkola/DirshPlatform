@@ -23,7 +23,7 @@ export class PrivacyPolicyPage {
   }
 
   goToLogin(){
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.setRoot(LoginPage);
   }
 
   quit(){
