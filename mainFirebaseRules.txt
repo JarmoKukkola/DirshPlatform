@@ -828,7 +828,10 @@
                 &&
                 newData.val()==
                 	newData.parent().parent().parent().parent().parent().child('sendApi/sender').val()
-              )"
+              )
+              ||
+              auth.uid==root.child('bountyDistributor').val()
+              "
         		},
       	  	"message":{//not required
         			".validate":"newData.isString()&&newData.val().length <= 10

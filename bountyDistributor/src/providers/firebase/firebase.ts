@@ -54,17 +54,16 @@ export class FirebaseProvider {
       let updates = {};
       let id = this.generatePushID();
 
-      updates['users/'+receiverAddress+'/pendingReceived/'+id]={
+      updates['/users/'+receiverAddress+'/pendingReceived/'+id]={
         tokenType:'Dirsh',
         amount:Number(amount),
-        index:0,
         time:firebase.database.ServerValue.TIMESTAMP,
         senderAddress: type + ' bounty'
       };
 
       updates[this.getPath(this.getDistributionPublicRef())+'/'+type]=Number(balance-amount);
-      updates['distribution/accountForBounty']=receiverAddress;
-      updates['distribution/idForBounty']=id;
+      updates['/distribution/accountForBounty']=receiverAddress;
+      updates['/distribution/idForBounty']=id;
       updates[this.getPath(this.getBountySentRef().child(id))]={
         receiverAddress:receiverAddress,
         amount:Number(amount),

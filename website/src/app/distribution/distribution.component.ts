@@ -136,6 +136,10 @@ export class DistributionComponent {
 
       We have to be able to confirm that you were the one who did the described contribution.
 
+      For example, bug reports are an example of a community reward.
+
+      Only the first reporter will get a bounty for a similar action.
+
       Max 10 rewards per user.
 
       Remember to follow laws and regulations.
