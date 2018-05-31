@@ -13,7 +13,7 @@ export class TelegramUtil implements SocialInterface{
     sendMessage(topic:string, message : string) : Promise < string > {
         // console.log('Post Telegram: '+message);
         return new Promise((resolve) => {
-            this.bot
+            return this.bot
                 .sendMessage(TELEGRAM_CHAT, topic+'. '+ message)
                 .then((message) => {
                     let messageId = message['message_id'];
@@ -26,7 +26,7 @@ export class TelegramUtil implements SocialInterface{
     deleteMessage(id : string) : Promise < void > {
         // console.log('Delete Telegram post: ' + id);
         return new Promise((resolve) => {
-            this.bot
+            return this.bot
                 .deleteMessage(TELEGRAM_CHAT, id)
                 .then(() => {
                     resolve();

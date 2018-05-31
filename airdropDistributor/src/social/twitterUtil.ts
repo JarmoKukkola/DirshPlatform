@@ -16,7 +16,7 @@ export class TwitterUtil implements SocialInterface {
     sendMessage(topic:string,message : string) : Promise < string > {
         // console.log('Post Twitter: ' + message);
         return new Promise((resolve) => {
-            this
+            return this
                 .client
                 .post('statuses/update', {
                     status: topic+'. '+message
@@ -36,8 +36,7 @@ export class TwitterUtil implements SocialInterface {
     deleteMessage(id : string) : Promise < void > {
         // console.log('Delete Twitter post: ' + id);
         return new Promise((resolve) => {
-            resolve();
-            this
+            return this
                 .client
                 .post('statuses/destroy/' + id+'.json', function (error, tweet, response) {
                     if (error) {

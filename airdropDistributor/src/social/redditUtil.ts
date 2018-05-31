@@ -13,7 +13,6 @@ export class RedditUtil implements SocialInterface{
             username: process.env.redditUser,
             password: process.env.redditPass
         });
-        
     }
 
     sendMessage(topic:string, message : string) : Promise < string > {
@@ -37,7 +36,7 @@ export class RedditUtil implements SocialInterface{
     deleteMessage(id : string) : Promise < void > {
         // console.log('Delete Reddit post: ' + id);
         return new Promise((resolve) => {
-            this.bot
+            return this.bot
                 .getSubmission(id)
                 .delete()
                 .then(() => {

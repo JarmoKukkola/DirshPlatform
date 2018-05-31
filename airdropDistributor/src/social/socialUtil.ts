@@ -18,7 +18,7 @@ export function getSocialUtil(socialMediaType : number) : SocialInterface {
 export function sendMessage(socialMediaType : number, topic : string, message : string) : Promise < string > {
     // console.log('Send message');
     return new Promise((resolve) => {
-        this
+        return this
             .getSocialUtil(socialMediaType)
             .sendMessage(topic, message)
             .then((messageId) => {
@@ -30,7 +30,7 @@ export function sendMessage(socialMediaType : number, topic : string, message : 
 export function deleteMessage(socialMediaType : number, id : string) : Promise < void > {
     // console.log('Delete message');
     return new Promise((resolve) => {
-        this
+        return this
             .getSocialUtil(socialMediaType)
             .deleteMessage(id)
             .then(() => {
