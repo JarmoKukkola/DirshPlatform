@@ -12,7 +12,8 @@
     "ionic:serve": "ionic-app-scripts serve",
     "start": "ionic-app-scripts serve",
     "electron dist": "electron .",
-    "ebuild": "npm run build --prod && electron-packager . --asar --icon=icon.ico --platform=win32 --arch=ia32 --no-prune --ignore=/node_modules --ignore=/resources --ignore=/src --ignore=/platforms --overwrite"
+    "ebuild_linux": "npm run build --prod && electron-packager . --asar --icon=icon.ico --platform=linux --no-prune --ignore=/node_modules --ignore=/resources --ignore=/src --ignore=/platforms --overwrite",
+    "ebuild_win32": "npm run build --prod && electron-packager . --asar --icon=icon.ico --platform=linux --no-prune --ignore=/node_modules --ignore=/resources --ignore=/src --ignore=/platforms --overwrite"
   },
   "dependencies": {
     "@angular/common": "5.0.3",
@@ -68,8 +69,8 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.8",
-    "electron": "2.0.2",
-    "electron-builder": "^20.14.7",
+    "electron": "~2.0.2",
+    "electron-builder": "~20.14.7",
     "typescript": "2.4.2"
   },
   "description": "Dirsh (Direct Cash) is a Private Scalable Instant Payment Platform",
