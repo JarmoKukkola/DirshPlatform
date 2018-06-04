@@ -13,7 +13,8 @@
     "start": "ionic-app-scripts serve",
     "electron dist": "electron .",
     "ebuild_linux": "npm run build --prod && electron-packager . --asar --icon=icon.ico --platform=linux --no-prune --ignore=/node_modules --ignore=/resources --ignore=/src --ignore=/platforms --overwrite",
-    "ebuild_win32": "npm run build --prod && electron-packager . --asar --icon=icon.ico --platform=linux --no-prune --ignore=/node_modules --ignore=/resources --ignore=/src --ignore=/platforms --overwrite"
+    "ebuild_win32": "npm run build --prod && electron-packager . --asar --icon=icon.ico --platform=win32 --arch=ia32 --no-prune --ignore=/node_modules --ignore=/resources --ignore=/src --ignore=/platforms --overwrite"
+
   },
   "dependencies": {
     "@angular/common": "5.0.3",
