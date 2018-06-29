@@ -22,8 +22,6 @@ import { MessageSendComponent } from './message-send/message-send.component';
 import { FeaturesComponent } from './features/features.component';
 import { DistributionComponent } from './distribution/distribution.component';
 import { LicensesComponent } from './licenses/licenses.component';
-import { SlickComponent } from './slick/slick.component';
-import { SlickItemDirective } from './slick-item.directive';
 import { CarouselComponent } from './carousel/carousel.component';
 import { WalletComponent } from './wallet/wallet.component';
 import { GiftcardComponent } from './giftcard/giftcard.component';
@@ -74,8 +72,6 @@ const routes: Routes = [
     FeaturesComponent,
     DistributionComponent,
     LicensesComponent,
-    SlickComponent,
-    SlickItemDirective,
     CarouselComponent,
     WalletComponent,
     GiftcardComponent,
@@ -110,8 +106,6 @@ const routes: Routes = [
     BrowserModule,
     MatButtonModule,
     MatFormFieldModule,
-    // MatSelectModule,
-    // BrowserAnimationsModule,
     HttpClientModule
   ],
   entryComponents: [DialogComponent, PrivacyPolicyDialogComponent, TermsOfServiceDialogComponent],

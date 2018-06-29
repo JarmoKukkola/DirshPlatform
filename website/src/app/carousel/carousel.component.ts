@@ -1,5 +1,4 @@
 import { Component, ViewChild,Input,HostListener,ElementRef, OnInit } from '@angular/core';
-import { SlickComponent } from '../slick/slick.component';
 
 @Component({
   selector: 'carousel',
@@ -7,8 +6,6 @@ import { SlickComponent } from '../slick/slick.component';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-
-  @ViewChild(SlickComponent) slick:SlickComponent;
 
   @ViewChild('widgetParentDiv')parentDiv : ElementRef;
   @HostListener('window:resize')onResize() {
@@ -27,22 +24,4 @@ export class CarouselComponent implements OnInit {
 
   @Input() items:any;
   @Input() topic:string;
-  @Input() popup:boolean=false;
-
-  selectedSlide=0;
-
-  slideConfig = {
-    "waitForAnimate":false,
-    "arrows":false,
-    "adaptiveHeight":true,
-    "accessibility":false,
-    "easing":'easeInOutSine',
-  };
-  
-  chooseSlide(i) {
-    if(!this.popup&&!this.mobile){
-      this.selectedSlide=i;
-      this.slick.slickGoTo(i);
-    }
-  }
 }

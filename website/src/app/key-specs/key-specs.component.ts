@@ -14,19 +14,14 @@ export class KeySpecsComponent {
   @Input() message:string;
   @Input() icon:string;
   @Input() photo:string;
-  @Input() popup:boolean=true;
-  @Input() highlight:boolean=false;
   @Input() github:string;
 
   constructor(private mDialog:MatDialog) { }
 
   dialog(){
-    if(this.popup){
       this.mDialog.open(DialogComponent, {
         data: { topic: this.name, content: this.message },
         panelClass: 'mat-dialog-style'
       });
-    }
   }
-
 }

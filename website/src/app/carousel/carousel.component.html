@@ -8,21 +8,8 @@
   <div class="key_features">
     <key-specs *ngFor="let item of items;let i = index;" 
     name="{{item[0]}}" message="{{item[1]}}"
-    icon="{{item[2]}}" (click)="chooseSlide(i)" 
-    [highlight]="i==selectedSlide&&!popup&&!mobile"
-    [popup]="popup||mobile" photo="{{item[3]}}" github="{{item[4]}}" ></key-specs>
+    icon="{{item[2]}}" photo="{{item[3]}}" github="{{item[4]}}" ></key-specs>
   </div>
 </div>
 
 <shadow></shadow>
-<div *ngIf="!popup&&!mobile">
-  <ngx-slick class="carousel slideContainer" #slickModal="slick-modal" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let item of items" class="slide">
-      <div class="text_white slideItem">
-        {{item[1]}}
-      </div>
-    </div>
-  </ngx-slick>
-</div>
-
-<shadow *ngIf="!popup"></shadow>
