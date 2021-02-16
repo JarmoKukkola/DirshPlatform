@@ -17,12 +17,6 @@
 
 ## Wallet Execution Guide
 
-### Android (Tested several Android versions)
-
-Install from [Google Play](https://play.google.com/store/apps/details?id=com.dirsh.wallet)
-
-#### OR
-
 * Download .apk file from the [Releases](https://github.com/JarmoKukkola/DirshPlatform/releases)
 * Go to "Settings"-"Security" of your Android phone (might depend of the model of the phone) and enable "Unknown sources"
 * Install the .apk
